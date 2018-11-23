@@ -11,17 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ebram.weather.Model.POJO.Example;
+import com.example.ebram.weather.Model.POJO.ListF;
 import com.example.ebram.weather.Model.POJO.Main;
 import com.example.ebram.weather.Model.POJO.Weather;
 import com.example.ebram.weather.Model.POJO.Wind;
 import com.example.ebram.weather.R;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>{
     private Context context;
-    private List<com.example.ebram.weather.Model.POJO.List> example;
+    private ListF example;
     private LayoutInflater layoutInflater;
 
     public WeatherAdapter(Context context) {
@@ -29,7 +31,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
         layoutInflater=LayoutInflater.from(context);
     }
 
-    public WeatherAdapter(Context context, java.util.List<com.example.ebram.weather.Model.POJO.List> example) {
+    public WeatherAdapter(Context context, ListF example) {
         this.context = context;
         this.example = example;
         layoutInflater=LayoutInflater.from(context);
@@ -44,13 +46,13 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
     @Override
     public void onBindViewHolder(final WeatherViewHolder holder, int position) {
 
-/*             holder.hum.setText(""+example.get(position).getMain().getHumidity());
-             holder.temp.setText(example.get(position).getMain().getTemp()+"° C");
-             holder.wind.setText(example.get(position).getWind().getSpeed()+"%");
-             holder.main.setText(""+example.get(0).getWeather().get(0).getMain());
-             holder.Pre.setText(example.get(position).getMain().getPressure()+"pha");
-             holder.rain.setText(example.get(position).getRain().get3h()+"H");
-             holder.date.setText(example.get(position).getDtTxt());*/
+            holder.hum.setText(""+example.getMain().getHumidity());
+             holder.temp.setText(example.getMain().getTemp()+"° C");
+             holder.wind.setText(example.getWind().getSpeed()+"%");
+             holder.main.setText(""+example.getWeather().get(0).getMain());
+             holder.Pre.setText(example.getMain().getPressure()+"pha");
+//             holder.rain.setText(example.getRain().get3h()+"H");
+             holder.date.setText(example.getDtTxt());
 
 
 

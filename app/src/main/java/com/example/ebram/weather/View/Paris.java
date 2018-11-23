@@ -38,7 +38,7 @@ public class Paris extends Fragment {
 
                     Example example = (Example) response.body();
                     humidity.setText(example.getMain().getHumidity()+ "%");
-                    Temp.setText(example.getMain().getTemp() + "° C");
+                    Temp.setText((int)(example.getMain().getTemp()/10) + "° C");
                     wind.setText(example.getWind().getSpeed() + "M/S");
                     des.setText("" + example.getWeather().get(0).getMain());
                     city.setText("" + example.getName() + "," + example.getSys().getCountry());

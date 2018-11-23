@@ -4,7 +4,7 @@ package com.example.ebram.weather.Model.POJO;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class List {
+public class ListF {
 
     @SerializedName("dt")
     @Expose
